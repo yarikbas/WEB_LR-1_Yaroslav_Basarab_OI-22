@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизація — Годівничка</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Ресторан "Годівничка"</h1>
+            <nav>
+                <a href="menu.html">Меню</a>
+                <a href="chefs.html">Наші кухарі</a>
+                <a href="about.html">Про нас</a>
+                <a href="auth.html" class="nav-active">Авторизація</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2>Авторизація</h2>
+                <div class="auth-wrapper">
+                    <div class="auth-tabs">
+                        <button class="auth-tab-btn active" onclick="switchTab('login', event)">Вхід</button>
+                        <button class="auth-tab-btn" onclick="switchTab('register', event)">Реєстрація</button>
+                    </div>
+
+                    <div id="login" class="auth-form-panel active">
+                        <form class="auth-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="login-email">Електронна пошта</label>
+                                <input type="email" id="login-email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Пароль</label>
+                                <input type="password" id="login-password" name="password" placeholder="Введіть пароль" required>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Увійти</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="register" class="auth-form-panel">
+                        <form class="auth-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="reg-name">Ім'я</label>
+                                <input type="text" id="reg-name" name="name" placeholder="Ваше ім'я" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-email">Електронна пошта</label>
+                                <input type="email" id="reg-email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-password">Пароль</label>
+                                <input type="password" id="reg-password" name="password" placeholder="Введіть пароль" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-password-confirm">Підтвердження пароля</label>
+                                <input type="password" id="reg-password-confirm" name="password_confirm" placeholder="Повторіть пароль" required>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Зареєструватись</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Контакти</h3>
+                    <p><strong>Адреса:</strong> вул. Степана Бандери, 12, Львів, 79000</p>
+                    <p><strong>Телефон:</strong> <a href="tel:+380322582111">+38 (032) 258-21-11</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@hodivnychka.lviv.ua">info@hodivnychka.lviv.ua</a></p>
+                </div>
+                <p class="copyright">&copy; 2026 Ресторан "Годівничка". Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function switchTab(tab, event) {
+            document.querySelectorAll('.auth-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.auth-form-panel').forEach(panel => panel.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
